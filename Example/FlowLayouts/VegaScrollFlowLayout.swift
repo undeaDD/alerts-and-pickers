@@ -110,7 +110,7 @@ open class VerticalScrollFlowLayout: UICollectionViewFlowLayout {
 	}
 	
     override open func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        return dynamicAnimator.layoutAttributesForCell(at: indexPath)!
+        return dynamicAnimator.layoutAttributesForCell(at: indexPath)
     }
     
     override open func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {

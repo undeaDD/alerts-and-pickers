@@ -18,6 +18,7 @@ class ViewController: UIViewController {
         case phoneCodePicker = "Phone Code Picker"
         case currencyPicker = "Currency Picker"
         case imagePicker = "Image Picker"
+        case rackImagePicker = "Rack Image Picker"
         case photoLibraryPicker = "Photo Library Picker"
         case colorPicker = "Color Picker"
         case textViewer = "Text Viewer"
@@ -37,6 +38,7 @@ class ViewController: UIViewController {
             case .phoneCodePicker: return "TableView"
             case .currencyPicker: return "TableView"
             case .imagePicker: return "CollectionView, horizontal flow"
+            case .rackImagePicker: return "Image Select in rack"
             case .photoLibraryPicker: return "Select photos from Photo Library"
             case .colorPicker: return "Storyboard & Autolayout"
             case .textViewer: return "TextView, not editable"
@@ -58,6 +60,7 @@ class ViewController: UIViewController {
             case .phoneCodePicker: return #imageLiteral(resourceName: "telephone")
             case .currencyPicker: return #imageLiteral(resourceName: "currency")
             case .imagePicker: return #imageLiteral(resourceName: "listings")
+            case .rackImagePicker: return #imageLiteral(resourceName: "listings")
             case .photoLibraryPicker: return #imageLiteral(resourceName: "four_rect")
             case .colorPicker: return #imageLiteral(resourceName: "colors")
             case .textViewer: return #imageLiteral(resourceName: "title")
@@ -77,7 +80,7 @@ class ViewController: UIViewController {
                 return UIColor(hex: 0x4CD964)
             case .countryPicker, .phoneCodePicker, .currencyPicker, .textViewer:
                 return UIColor(hex: 0xFF5722)
-            case .imagePicker, .photoLibraryPicker:
+            case .imagePicker, .rackImagePicker, .photoLibraryPicker:
                 return UIColor(hex: 0xFF2DC6)
             case .colorPicker:
                 return nil
@@ -85,7 +88,7 @@ class ViewController: UIViewController {
         }
     }
     
-    fileprivate lazy var alerts: [AlertType] = [.simple, .simpleWithImages, .oneTextField, .twoTextFields, .dataPicker, .pickerView, .countryPicker, .phoneCodePicker, .currencyPicker, .imagePicker, .photoLibraryPicker, .colorPicker, .textViewer, .contactsPicker, .locationPicker, .telegramPicker]
+    fileprivate lazy var alerts: [AlertType] = [.simple, .simpleWithImages, .oneTextField, .twoTextFields, .dataPicker, .pickerView, .countryPicker, .phoneCodePicker, .currencyPicker, .imagePicker, .rackImagePicker, .photoLibraryPicker, .colorPicker, .textViewer, .contactsPicker, .locationPicker, .telegramPicker]
     
     // MARK: UI Metrics
     
@@ -337,7 +340,13 @@ class ViewController: UIViewController {
                 }))
             alert.addAction(title: "OK", style: .cancel)
             alert.show()
-            
+        case .rackImagePicker:
+            let alert = UIAlertController(style: self.alertStyle)
+            alert.addRackImagePicker(presentationController: self) { image in
+                
+            }
+            alert.addAction(title: "OK", style: .cancel)
+            alert.show()
         case .photoLibraryPicker:
             let alert = UIAlertController(style: self.alertStyle)
             alert.addPhotoLibraryPicker(flow: .vertical, paging: false,

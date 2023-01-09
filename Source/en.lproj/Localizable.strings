@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Alerts&Pickers
+
+  Created by Andreas Juen on 09.01.23.
+  Copyright © 2023 Supreme Apps. All rights reserved.
+*/
+
+"select" = "Select";
+"takePhoto" = "Take Photo";
+"photoLibrary" = "Photo Library";
