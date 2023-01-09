@@ -343,7 +343,7 @@ class ViewController: UIViewController {
         case .rackImagePicker:
             let alert = UIAlertController(style: self.alertStyle)
             alert.addRackImagePicker(presentationController: self) { image in
-                
+                print("image is set")
             }
             alert.addAction(title: "OK", style: .cancel)
             alert.show()

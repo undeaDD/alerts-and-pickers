@@ -46,7 +46,6 @@ final public class RackImagePicker: NSObject {
         self.pickerController.modalPresentationStyle = .fullScreen
         self.pickerController.mediaTypes = ["public.image"]
         initAction()
-        
     }
     
     private func action(for type: UIImagePickerController.SourceType, title: String) -> UIAlertAction? {
@@ -80,8 +79,8 @@ extension RackImagePicker: UIImagePickerControllerDelegate {
         self.pickerController(picker, didSelect: nil)
     }
     
-    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        guard let image = info[UIImagePickerController.InfoKey.originalImage.rawValue] as? UIImage else {
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.originalImage] as? UIImage else {
             return self.pickerController(picker, didSelect: nil)
         }
         self.pickerController(picker, didSelect: image)
