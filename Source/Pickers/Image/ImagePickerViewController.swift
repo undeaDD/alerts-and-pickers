@@ -10,7 +10,7 @@ extension UIAlertController {
     ///   - images: for content to select
     ///   - selection: type and action for selection of image/images
     
-    func addImagePicker(flow: UICollectionView.ScrollDirection, paging: Bool, images: [UIImage], selection: ImagePickerViewController.SelectionType? = nil) {
+    public func addImagePicker(flow: UICollectionView.ScrollDirection, paging: Bool, images: [UIImage], selection: ImagePickerViewController.SelectionType? = nil) {
         let vc = ImagePickerViewController(flow: flow, paging: paging, images: images, selection: selection)
         
         if UIDevice.current.userInterfaceIdiom == .pad {
