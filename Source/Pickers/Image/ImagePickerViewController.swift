@@ -112,7 +112,7 @@ final public class ImagePickerViewController: UIViewController {
         Log("has deinitialized")
     }
     
-    override func loadView() {
+    public override func loadView() {
         view = collectionView
     }
 }
@@ -121,7 +121,7 @@ final public class ImagePickerViewController: UIViewController {
 
 extension ImagePickerViewController: UICollectionViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let image = images[indexPath.item]
         switch selection {
             
@@ -137,7 +137,7 @@ extension ImagePickerViewController: UICollectionViewDelegate {
         case .none: break }
     }
     
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let image = images[indexPath.item]
         switch selection {
         case .multiple(let action)?:
@@ -153,15 +153,15 @@ extension ImagePickerViewController: UICollectionViewDelegate {
 
 extension ImagePickerViewController: UICollectionViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    public func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: ItemWithImage.identifier, for: indexPath) as? ItemWithImage else { return UICollectionViewCell() }
         item.imageView.image = images[indexPath.row]
         return item
