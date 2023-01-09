@@ -24,7 +24,7 @@ extension UIAlertController {
     }
 }
 
-final class ImagePickerViewController: UIViewController {
+final public class ImagePickerViewController: UIViewController {
     
     public typealias SingleSelection = (UIImage?) -> Swift.Void
     public typealias MultipleSelection = ([UIImage]) -> Swift.Void
