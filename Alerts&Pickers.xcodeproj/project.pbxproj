@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09BB9479296CA76500DCEB15 /* RackImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB9478296CA76500DCEB15 /* RackImagePickerViewController.swift */; };
+		09BB947C296CA82300DCEB15 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09BB947E296CA82300DCEB15 /* Localizable.strings */; };
 		FA005E922015D769001EA8C6 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA005E912015D769001EA8C6 /* Contacts.swift */; };
 		FA005E942015E490001EA8C6 /* UISearchBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA005E932015E490001EA8C6 /* UISearchBar+Extensions.swift */; };
 		FA005E9620162BB5001EA8C6 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA005E9520162BB5001EA8C6 /* Assets.swift */; };
@@ -73,6 +75,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09BB9478296CA76500DCEB15 /* RackImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RackImagePickerViewController.swift; sourceTree = "<group>"; };
+		09BB947D296CA82300DCEB15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		09BB947F296CA86800DCEB15 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA005E912015D769001EA8C6 /* Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
 		FA005E932015E490001EA8C6 /* UISearchBar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Extensions.swift"; sourceTree = "<group>"; };
 		FA005E9520162BB5001EA8C6 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
@@ -151,6 +156,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09BB9477296CA70600DCEB15 /* DefaultImage */ = {
+			isa = PBXGroup;
+			children = (
+				09BB9478296CA76500DCEB15 /* RackImagePickerViewController.swift */,
+			);
+			path = DefaultImage;
+			sourceTree = "<group>";
+		};
 		FA3BB26A2008B41B00E06F8F = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +234,7 @@
 		FA3BB2A12008B46800E06F8F /* Pickers */ = {
 			isa = PBXGroup;
 			children = (
+				09BB9477296CA70600DCEB15 /* DefaultImage */,
 				FA4B0373201A814100D282E2 /* Color */,
 				FA4B0372201A812800D282E2 /* Contacts */,
 				FAAB5C95201BCC8D00CCE04D /* Date */,
@@ -254,6 +268,7 @@
 				FA3BB2932008B46600E06F8F /* Extensions */,
 				FA3BB2A12008B46800E06F8F /* Pickers */,
 				FA3BB28F2008B46500E06F8F /* Views */,
+				09BB947E296CA82300DCEB15 /* Localizable.strings */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -530,6 +545,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = FA3BB26A2008B41B00E06F8F;
 			productRefGroup = FA3BB2742008B41B00E06F8F /* Products */;
@@ -551,6 +567,7 @@
 				FA3BB2BF2008B46900E06F8F /* Countries.bundle in Resources */,
 				FA3BB2AD2008B46800E06F8F /* LaunchScreen.storyboard in Resources */,
 				FA3BB2AC2008B46800E06F8F /* Assets.xcassets in Resources */,
+				09BB947C296CA82300DCEB15 /* Localizable.strings in Resources */,
 				FA3BB2CD2008B98F00E06F8F /* Assets in Resources */,
 				FA3BB2892008B45600E06F8F /* README.md in Resources */,
 			);
@@ -608,6 +625,7 @@
 				FA3BB2C02008B46900E06F8F /* DatePickerViewController.swift in Sources */,
 				FA4B036C201A119C00D282E2 /* Location.swift in Sources */,
 				FA3BB2AF2008B46800E06F8F /* Label.swift in Sources */,
+				09BB9479296CA76500DCEB15 /* RackImagePickerViewController.swift in Sources */,
 				FA005E9620162BB5001EA8C6 /* Assets.swift in Sources */,
 				FA3BB2BA2008B46900E06F8F /* UIAlertController+Extensions.swift in Sources */,
 				FA3BB2C22008B46900E06F8F /* PickerViewViewController.swift in Sources */,
@@ -625,6 +643,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		09BB947E296CA82300DCEB15 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				09BB947D296CA82300DCEB15 /* en */,
+				09BB947F296CA86800DCEB15 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		FA3BB28C2008B46500E06F8F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -640,6 +667,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -700,6 +728,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
